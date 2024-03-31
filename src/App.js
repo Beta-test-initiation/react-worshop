@@ -1,10 +1,11 @@
-import React,{ useState }  from 'react';
+import React,{ useState,  useEffect, useRef }  from 'react';
 import LegoSet from './LegoSet';
 import './App.css';
 
 function App() {
 
   const [searchTerm, setSearchTerm] = useState('');
+  const searchInputRef = useRef(null);
   const [legoSets, setLegoSets] = useState([
     {
       "id": 1,
@@ -40,6 +41,16 @@ function App() {
     
   ]
   );
+
+  useEffect(() => {
+    // Simulate fetching data with static data here
+    const fetchedLegoSets = legoSets;
+    setLegoSets(fetchedLegoSets);
+
+    // Focus on the search input field on initial render
+    //searchInputRef.current.focus();
+  }, []); // The empty array ensures this effect runs only once on mount
+
 
   const filteredSets = legoSets.filter(set =>
     set.name.toLowerCase().includes(searchTerm.toLowerCase())
