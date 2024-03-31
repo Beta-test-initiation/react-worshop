@@ -1,6 +1,8 @@
 import React,{ useState,  useEffect, useRef }  from 'react';
 import LegoSet from './LegoSet';
 import './App.css';
+import { BrowserRouter , Route, Routes, Link } from 'react-router-dom';
+import AboutPage from './AboutPage';
 
 function App() {
 
@@ -56,19 +58,35 @@ function App() {
     set.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-
   return (
-    <div className="App">
-      <input
-        type="text"
-        placeholder="Search LEGO sets"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
-      {filteredSets.map(set => (
-        <LegoSet key={set.id} {...set} />
-      ))}
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Routes> 
+         
+          <Route 
+            path="/" 
+            element={
+              <>
+                <input
+                  type="text"
+                  placeholder="Search LEGO sets"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                />
+                {filteredSets.map(set => (
+                  <LegoSet key={set.id} {...set} />
+                ))}
+                <div>
+                  <Link to="/about" style={{ textDecoration: 'none', color: 'hotpink', marginBottom: '20px', display: 'inline-block', background: 'white', padding: '10px 20px', borderRadius: '20px' }}>About</Link>
+                </div>
+              </>
+            } 
+          />
+         
+          <Route path="/about" element={<AboutPage />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
