@@ -1,38 +1,59 @@
+/* App.css adjustments for the search field */
 .App {
   text-align: center;
+  background-color: #fdf1f2; /* Soft pink background */
+  color: #d15b7d; /* Pink text color for consistency */
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App input[type="text"] {
+  font-size: 16px;
+  padding: 10px;
+  margin: 20px 0; /* Add some space around the input */
+  width: 80%; /* Adjust based on preference */
+  border: 2px solid #f9c2d1; /* Pinkish border */
+  border-radius: 20px; /* Rounded corners for the input */
+  outline: none;
+  color: #d15b7d; /* Pink text color */
+  background-color: #ffffff; /* White background for the input */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App input[type="text"]::placeholder {
+  color: #f9c2d1; /* Lighter pink color for the placeholder text */
 }
+
+.App input[type="text"]:focus {
+  border-color: #d15b7d; /* Darker pink border on focus */
+}
+
+/* Continue with the rest of your styles... */
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #ffe4e6; /* Slightly darker pink for the header */
+  /* Removed color: #333; to allow inheritance from .App */
+  padding: 20px;
+  border-radius: 8px; /* Adds roundness to the corners */
+  margin: 20px auto; /* Centers the content with some margin */
+  max-width: 80%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Soft shadow for depth */
 }
 
-.App-link {
-  color: #61dafb;
+h1 {
+  color: #d15b7d; /* Pinkish tone for the main heading - This can be removed if you want the same pink as the rest of the text */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-header img {
+  border-radius: 8px; /* Round corners for images */
+  margin-top: 20px;
+  border: 2px solid #f9c2d1; /* Pinkish border for the images */
+  max-width: 100%;
+  height: auto;
+}
+
+.lego-image {
+  max-width: 100%; /* Adjust based on your preference */
+  height: auto; /* Keeps the aspect ratio intact */
+  border-radius: 10px; /* Optional: Adds rounded corners for a softer look */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow for depth */
+  margin-top: 10px; /* Adds a little space above the image */
 }
