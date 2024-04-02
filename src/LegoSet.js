@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
+import './LegoSet.css'; // Import the external CSS file
 
 function LegoSet({ name, description, imageUrl }) {
   const [isVisible, setIsVisible] = useState(true);
 
   return (
-    <div style={{ margin: '20px', padding: '10px' }}>
+    <div className="lego-set-container">
       <h2>{name}</h2>
       {isVisible && <p>{description}</p>}
-      <button style={{ margin: '20px', border: '1px solid #ccc', padding: '10px' }} onClick={() => setIsVisible(!isVisible)}>
+      <button className="toggle-btn" onClick={() => setIsVisible(!isVisible)}>
         {isVisible ? 'Hide' : 'Show'} Description
       </button>
-      <img className="lego-image" src={imageUrl} alt={`LEGO set ${name}`} style={{ width: '100%', }} />
+      <img className="lego-image" src={imageUrl} alt={`LEGO set ${name}`} />
     </div>
   );
 }

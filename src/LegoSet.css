@@ -1,0 +1,16 @@
+/* LegoSet.css */
+
+.lego-set-container {
+    margin: 20px;
+    padding: 10px;
+}
+  
+.toggle-btn {
+    margin: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.lego-image {
+    width: 100%;
+}  
