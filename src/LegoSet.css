@@ -1,16 +1,28 @@
 /* LegoSet.css */
 
 .lego-set-container {
-    margin: 20px;
+    margin: 20px auto;
     padding: 10px;
+    background: #fff;
+    border-radius: 40px;
+    width: 50%;
 }
   
 .toggle-btn {
-    margin: 20px;
+    margin: 20px auto;
     border: 1px solid #ccc;
     padding: 10px;
+    display: block;
+    border-radius: 40px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.toggle-btn:hover {
+    background: #333;
+    color: white;
 }
 
 .lego-image {
-    width: 100%;
+    width: 40%;
 }  
